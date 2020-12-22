@@ -99,8 +99,12 @@ public class lesson2 {
         // Задание 6 проверка суммы сторон
 
         int[] checkArray = {2, 2, 2, 1, 2, 2, 10, 1};
-
         System.out.println(checkBalance(checkArray));
+
+        // Задание 7 смещение массива на n
+
+        int[] ar = {1,2,3};
+        offsetArray( ar,1);
 
     }
 
@@ -125,6 +129,32 @@ public class lesson2 {
             else return true;
         }
          return false;
+    }
+
+    public static void offsetArray(int[] arr, int n){
+
+        int keep;
+
+        if(n > 0){
+
+            for (int i = 0; i < n; i++) {
+                keep = arr[0];
+                for (int j = 0; j < arr.length; j++) {
+                    if(j != arr.length -1) arr[j] = arr[j + 1];
+                }
+                arr[arr.length - 1] = keep;
+            }
+        }
+        else {
+            for (int i = 0; i > n; i--) {
+                keep = arr[arr.length - 1];
+                for (int j = 0; j < arr.length; j++) {
+                    if(j != arr.length - 1) arr[arr.length - 1 - j] = arr[arr.length - 2 - j];
+                }
+                arr[0] = keep;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
     }
 
 }
