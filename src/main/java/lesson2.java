@@ -156,6 +156,5 @@ public class lesson2 {
         }
         System.out.println(Arrays.toString(arr));
     }
-
 }
 
